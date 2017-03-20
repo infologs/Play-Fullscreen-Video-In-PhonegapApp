@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="format-detection" content="telephone=no">
+			<meta name="msapplication-tap-highlight" content="no">
+				<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+					<link rel="stylesheet" type="text/css" href="css/index.css">
+						<title>Hello World</title>
+						<script type="text/javascript" src="cordova.js"></script>
+						<style>
+							video {
+								position: fixed;
+								top: 50%;
+								left: 50%;
+								min-width: 100%;
+								min-height: 100%;
+								width: auto;
+								height: auto;
+								z-index: -100;
+								transform: translateX(-50%) translateY(-50%);
+								background-size: cover;
+								transition: 1s opacity;
+								-webkit-transform: translateX(-50%) translateY(-50%);
+							}
+						#dvVideo {
+							text-align:center;
+						}
+						</style>
+						<script>
+							function FirstVideo()
+							{
+								document.getElementById('videoPlayback').src = "video/background-video1.mp4";
+								document.getElementById('videoPlayback').load()
+								document.getElementById('videoPlayback').play()
+							}
+						function SecondVideo()
+						{
+							document.getElementById('videoPlayback').src = "video/background-video2.mp4";
+							document.getElementById('videoPlayback').load()
+							document.getElementById('videoPlayback').play()
+						}
+						</script>
+						</head>
+	<body>
+		<div id="dvVideo">
+			<video webkit-playsinline playsinline loop id="videoPlayback" poster="#">
+				<source src="#" type="video/mp4">
+					</video>
+			<br/>
+			<input type="button" value="Play First Video" onclick="FirstVideo()" />
+			<input type="button" value="Play Second Video" onclick="SecondVideo()" />
+		</div>
+	</body>
+</html>
